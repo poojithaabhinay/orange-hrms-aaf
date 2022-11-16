@@ -1,33 +1,44 @@
 package com.live.hrms.stepDef;
 
 import com.live.hrms.pages.LoginPage;
-import com.live.hrms.pages.Page;
+
 import com.live.hrms.pages.PhonePage;
-import io.cucumber.java.Before;
+;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverInfo;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.testng.Assert;
+
+
+import java.time.Duration;
+
+
 
 public class Hrms {
  public WebDriver driver;
  public LoginPage lp;
  public PhonePage pp;
- @Before
- public void setup(){
-     lp = new LoginPage(driver);
-     pp = new PhonePage(driver);
- }
+
+
    @Given("Open browser")
     public void open_browser() {
 
        WebDriverManager.chromedriver().setup();
        driver= new ChromeDriver();
+       driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+       driver.manage().window().maximize();
+       lp = new LoginPage(driver);
+       pp = new PhonePage(driver);
+
    }
    @When("Open cart application {string}")
     public void open_cart_application(String url) {
@@ -35,47 +46,56 @@ public class Hrms {
    }
 
 
-    @Then("Click on MyAccount drop menu")
-    public void click_on_my_account_drop_menu() {
-           lp.clickMyAccount();
-    }
+
 
     @Then("Click on Login button")
     public void click_on_login_button() {
         lp.clickLogin();
     }
 
-    @Then("Enter  email address {string} and password {string}")
+   @Then("Enter  email address {string} and password {string} and click login")
     public void enter_email_and_password(String email, String password) {
-
-
-            lp.setEmail(email);
-            lp.setPassword(password);
-        }
-    @Then("Click login")
-    public void click_login() {
-
-        lp.clickLoginButton();
-
-    }
+            lp.Login(email,password);
+   }
     @Then("Click Phone&PDAs")
     public void click_phone_pd_as() {
        lp.clickPhone();
-    }
+       if (driver.getTitle().equals("Phones & PDAs"))
+       {
+           Assert.assertTrue(true);
 
+       }
+       else {
+           Assert.assertTrue(false);
+       }
+
+    }
     @Then("Click HTC Touch HD")
     public void click_htc_touch_hd() {
 
         pp.clickHTCTouchHD();
+
     }
-    @Then("Add to cart and verify in items")
-    public void add_to_cart_and_verify_in_items () {
-        driver.findElement(By.xpath("//button[@id='button-cart']")).click();
-        WebElement item = driver.findElement(By.xpath("//button[@class='btn btn-inverse btn-block dropdown-toggle']"));
-        if (item.equals("HTC Touch HD")) {
-            System.out.println("Pass");
+    @Then("Add to cart")
+    public void add_to_cart()  {
+       pp.clickAddToCart();
+
+
+    }
+    @Then("verify in items")
+    public void verify_in_items() throws InterruptedException {
+      Thread.sleep(5000);
+       String itemText=pp.getTextFromItemsCart();
+        if (itemText.equals("1 item(s) - $122.00")) {
+             System.out.println("Pass");
+             Assert.assertTrue(true);
         } else {
             System.out.println("fail");
+            Assert.assertTrue(false);
         }
+
     }
-}
+
+
+    }
+

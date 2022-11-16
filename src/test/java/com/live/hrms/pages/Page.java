@@ -1,5 +1,6 @@
 package com.live.hrms.pages;
 
+import com.live.hrms.utilities.UiUtilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,15 +13,18 @@ public class Page {
 
 
    private WebDriver driver;
-   Page(){
-
+   public UiUtilities utilities;
+   public Page(){
+   //    super(driver);
+     System.out.println("Parameterless constructor");
    }
 
-    Page(WebDriver driver)
+ public  Page(WebDriver driver)
     {
+
         this.driver = driver;
         PageFactory.initElements(this.driver,this);
-
+        utilities =new UiUtilities(driver);
     }
     @FindBy(how= How.XPATH,using =("//ul[@class ='nav navbar-nav']/li[1]/a"))
     WebElement deskTop;
@@ -48,14 +52,17 @@ public class Page {
             @FindBy(how=How.XPATH,using =("//a[@id='wishlist-total']"))
             WebElement wishList;
 
-            @FindBy(how = How.XPATH, using="//span[text()='MY ACCOUNT']")
+            @FindBy(how = How.XPATH, using="//span[text()='My Account']")
             WebElement myaccount;
 
-            @FindBy(how = How.LINK_TEXT, using="REGISTER")
+            @FindBy(how = How.LINK_TEXT, using="Register")
             WebElement register;
 
-            @FindBy(how = How.LINK_TEXT, using="LOGIN")
+            @FindBy(how = How.LINK_TEXT, using="Login")
             WebElement login;
+    @FindBy(how = How.XPATH, using="//button[@class='btn btn-inverse btn-block dropdown-toggle']")
+    WebElement itemCart;
+
             public void clickDesktop()
             {
             deskTop.click();
@@ -93,17 +100,17 @@ public class Page {
             wishList.click();
             }
 
-            public void clickMyAccount(){
 
-            myaccount.click();
-            }
             public void clickRegister()
             {
             register.click();
             }
             public void clickLogin()
             {
+             myaccount.click();
             login.click();
             }
-
+            public String getTextFromItemsCart(){
+                return utilities.getElementText(itemCart);
+            }
 }

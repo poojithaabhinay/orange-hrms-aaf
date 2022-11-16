@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends Page {
     private WebDriver driver;
 
-    LoginPage (WebDriver driver) {
+   public LoginPage (WebDriver driver) {
+       super(driver);
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
     }
@@ -24,15 +25,10 @@ public class LoginPage extends Page {
             WebElement  button;
 
 
-    public void setEmail(String userEmail)
-    {
+
+    public void Login(String userEmail,String userPassword) {
         email.sendKeys(userEmail);
-    }
-    public void setPassword(String password1)
-    {
-       password.sendKeys(password1);
-    }
-    public void clickLoginButton() {
+        password.sendKeys(userPassword);
         button.click();
     }
 }

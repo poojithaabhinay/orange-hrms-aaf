@@ -1,5 +1,7 @@
 package com.live.hrms.pages;
 
+import com.live.hrms.utilities.UiUtilities;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +13,7 @@ public class PhonePage extends Page {
 
     private WebDriver driver;
 
-    PhonePage(WebDriver driver) {
+    public PhonePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
 
@@ -23,9 +25,14 @@ public class PhonePage extends Page {
     WebElement iphone;
     @FindBy(how = How.XPATH, using = ("//a[text()='Palm Treo Pro']"))
     WebElement palmTreo;
+    @FindBy(how = How.XPATH, using = ("//button[@id='button-cart']"))
+    WebElement btnAddToCart;
+
+
 
     public void clickHTCTouchHD() {
-        htcTouch.click();
+       utilities.waitForElement(htcTouch);
+        utilities.clickElementWithJs(htcTouch);
     }
 
     public void clickIphone() {
@@ -34,5 +41,8 @@ public class PhonePage extends Page {
 
     public void clickPalmTreoPro() {
         palmTreo.click();
+    }
+    public void clickAddToCart(){
+        utilities.clickElementWithJs(btnAddToCart);
     }
 }
