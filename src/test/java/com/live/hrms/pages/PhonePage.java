@@ -9,14 +9,12 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 public class PhonePage extends Page {
-
-
     private WebDriver driver;
-
+    private  UiUtilities utilities;
     public PhonePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(this.driver, this);
-
+        utilities =new UiUtilities(driver);
     }
 
     @FindBy(how = How.XPATH, using = ("(//a[text()='HTC Touch HD'])[1]"))
@@ -28,17 +26,13 @@ public class PhonePage extends Page {
     @FindBy(how = How.XPATH, using = ("//button[@id='button-cart']"))
     WebElement btnAddToCart;
 
-
-
     public void clickHTCTouchHD() {
        utilities.waitForElement(htcTouch);
         utilities.clickElementWithJs(htcTouch);
     }
-
     public void clickIphone() {
         iphone.click();
     }
-
     public void clickPalmTreoPro() {
         palmTreo.click();
     }

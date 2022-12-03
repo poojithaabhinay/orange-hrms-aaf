@@ -13,7 +13,7 @@ public class Page {
 
 
    private WebDriver driver;
-   public UiUtilities utilities;
+  private  UiUtilities utilities;
    public Page(){
    //    super(driver);
      System.out.println("Parameterless constructor");

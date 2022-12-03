@@ -1,0 +1,3 @@
+INFO - 28-11-2022 14:39:47 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Dr. Indra Chattopadhyay","email":"dr_chattopadhyay_indra@stanton.org","gender":"male","status":"inactive"}
+INFO - 28-11-2022 14:39:47 - ServiceStepDef - response_code - Expected Response Code '200' And Actual Response code '200'
+INFO - 28-11-2022 14:39:48 - ServiceStepDef - validate_name - Expected Name 'Minakshi Chopra' And Actual Name 'Dr. Indra Chattopadhyay'

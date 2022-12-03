@@ -1,0 +1,20 @@
+INFO - 17-11-2022 22:29:09 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Minakshi Chopra","email":"chopra_minakshi@marvin.biz","gender":"male","status":"active"}
+INFO - 17-11-2022 22:42:29 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Minakshi Chopra","email":"chopra_minakshi@marvin.biz","gender":"male","status":"active"}
+INFO - 17-11-2022 22:55:58 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Minakshi Chopra","email":"chopra_minakshi@marvin.biz","gender":"male","status":"active"}
+INFO - 17-11-2022 22:55:58 - ServiceStepDef - response_code - Expected Response Code '200' And Actual Response code '200'
+INFO - 17-11-2022 22:55:59 - ServiceStepDef - validate_name - Expected Name 'Minakshi Chopra' And Actual Name 'Minakshi Chopra'
+INFO - 17-11-2022 22:55:59 - ServiceStepDef - validate_email - Expected Email 'chopra_minakshi@marvin.biz' And Actual Email 'chopra_minakshi@marvin.biz'
+INFO - 17-11-2022 22:55:59 - ServiceStepDef - validate_gender - Expected Gender 'male' And Actual Gender 'male'
+INFO - 17-11-2022 22:55:59 - ServiceStepDef - validate_status - Expected Status 'active' And Actual Status 'active'
+INFO - 17-11-2022 23:13:11 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Minakshi Chopra","email":"chopra_minakshi@marvin.biz","gender":"male","status":"active"}
+INFO - 17-11-2022 23:13:12 - ServiceStepDef - response_code - Expected Response Code '200' And Actual Response code '200'
+INFO - 17-11-2022 23:13:13 - ServiceStepDef - validate_name - Expected Name 'Minakshi Chopra' And Actual Name 'Minakshi Chopra'
+INFO - 17-11-2022 23:13:13 - ServiceStepDef - validate_email - Expected Email 'chopra_minakshi@marvin.biz' And Actual Email 'chopra_minakshi@marvin.biz'
+INFO - 17-11-2022 23:13:13 - ServiceStepDef - validate_gender - Expected Gender 'male' And Actual Gender 'male'
+INFO - 17-11-2022 23:13:13 - ServiceStepDef - validate_status - Expected Status 'active' And Actual Status 'active'
+INFO - 17-11-2022 23:15:06 - WebServices - getResponseFromGetMethodRestAssured - Response  - {"id":1097,"name":"Minakshi Chopra","email":"chopra_minakshi@marvin.biz","gender":"male","status":"active"}
+INFO - 17-11-2022 23:15:07 - ServiceStepDef - response_code - Expected Response Code '200' And Actual Response code '200'
+INFO - 17-11-2022 23:15:08 - ServiceStepDef - validate_name - Expected Name 'Minakshi Chopra' And Actual Name 'Minakshi Chopra'
+INFO - 17-11-2022 23:15:08 - ServiceStepDef - validate_email - Expected Email 'chopra_minakshi@marvin.biz' And Actual Email 'chopra_minakshi@marvin.biz'
+INFO - 17-11-2022 23:15:08 - ServiceStepDef - validate_gender - Expected Gender 'male' And Actual Gender 'male'
+INFO - 17-11-2022 23:15:09 - ServiceStepDef - validate_status - Expected Status 'active' And Actual Status 'active'

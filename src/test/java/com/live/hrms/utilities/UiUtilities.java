@@ -13,10 +13,7 @@ public class UiUtilities {
      public UiUtilities(){
 
      }
-
-
-
-    public UiUtilities(WebDriver driver) {
+     public UiUtilities(WebDriver driver) {
 
         this.driver = driver;
     }
