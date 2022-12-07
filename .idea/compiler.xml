@@ -9,5 +9,8 @@
         <module name="orange-hrms-aaf" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="orange-hrms-aaf" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

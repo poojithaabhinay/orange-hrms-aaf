@@ -1,8 +1,0 @@
-INFO - 02-12-2022 22:03:12 - WebServices - getResponseFromPostMethodRestAssured - response failed Failed : HTTP error code :404
-
-INFO - 02-12-2022 22:03:12 - ServiceStepDef - response_code - Expected Response Code '201' And Actual Response code '404'
-INFO - 02-12-2022 22:10:51 - WebServices - getResponseFromPostMethodRestAssured - response failed Failed : HTTP error code :404
-
-INFO - 02-12-2022 22:10:51 - ServiceStepDef - response_code - Expected Response Code '201' And Actual Response code '404'
-INFO - 02-12-2022 22:17:20 - WebServices - getResponseFromPostMethodRestAssured - Response  - {"id":4070,"name":"pooji101","email":"pooji101@gmail.com","gender":"female","status":"active"}
-INFO - 02-12-2022 22:17:20 - ServiceStepDef - response_code - Expected Response Code '201' And Actual Response code '201'
