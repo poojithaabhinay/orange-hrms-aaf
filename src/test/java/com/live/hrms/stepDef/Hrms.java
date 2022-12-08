@@ -127,6 +127,7 @@ public class Hrms {
     @Then("Add to cart")
     public void add_to_cart()  {
        pp.clickAddToCart();
+       driver.quit();
 
 
     }
