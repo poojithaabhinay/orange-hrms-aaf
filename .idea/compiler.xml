@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="orange-hrms-aaf" target="11" />
+      <module name="orange-hrms-aaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
