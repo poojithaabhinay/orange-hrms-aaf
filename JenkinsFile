@@ -1,8 +1,12 @@
 pipeline {
     agent any
     parameters{
-        string(name: 'Environment', defaultValue: 'QA', description: 'which app environment script need to be executed')
-        string(name: 'Browser', defaultValue: 'CH', description: 'which browser script need to be executed')
+        choice(name: 'Enviroment',choices: [ 'QA', 'UAT'],description: 'Passing the Environment')
+        choice(name:'ExecutionType',choices:['Local','Remote'],description:'Passing the ExecutionType')
+        choice(name :'Browser',choices:['CH','FF','ED'],description:'Passing the Browser')
+        choice (name:'ThreadCount',choices:['1','2','3'],description:'Passing the ThreadCount')
+        text(name: 'RemoteExecutionGrid', description: 'Passing the RemoteExecutionGrid',defaultValue:"https://oauth-poojiqa54-82871:55ae1559-d8c8-45a9-b4a3-e5bdd2ae7b3e@ondemand.us-west-1.saucelabs.com:443/wd/hub")
+        text(name:'tags',description:'Enter the tags',defaultValue:"@UI")
     }
     tools {
         maven "mymaven"
