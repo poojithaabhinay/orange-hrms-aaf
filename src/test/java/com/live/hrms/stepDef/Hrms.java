@@ -38,9 +38,25 @@ public class Hrms {
 
    @Given("Open browser")
     public void open_browser() throws MalformedURLException {
-        String ExecutionType = Config.properties.getProperty("ExecutionType");
-       String RemoteExecutionGrid = Config.properties.getProperty("RemoteExecutionGrid");
-       String Browser = Config.properties.getProperty("Browser");
+
+       String ExecutionType = System.getProperty("ExecutionType");
+       if(ExecutionType==null)
+       {
+           ExecutionType = Config.properties.getProperty("ExecutionType");
+       }
+
+       String RemoteExecutionGrid = System.getProperty("RemoteExecutionGrid");
+       if(RemoteExecutionGrid==null)
+       {
+           RemoteExecutionGrid = Config.properties.getProperty("RemoteExecutionGrid");
+       }
+
+       String Browser = System.getProperty("Browser");
+       if(Browser==null)
+       {
+           Browser = Config.properties.getProperty("Browser");
+       }
+
        if (ExecutionType.equals("Local")) {
             if(Browser.equals("CH")) {
                 WebDriverManager.chromedriver().setup();
@@ -92,7 +108,12 @@ public class Hrms {
    }
    @When("Open cart application")
     public void open_cart_application() {
-       String Environment= Config.properties.getProperty("Environment");
+
+       String Environment = System.getProperty("Environment");
+       if(Environment==null)
+       {
+           Environment = Config.properties.getProperty("Environment");
+       }
        String CartUrl= Config.properties.getProperty(Environment+"CartUrl");
        driver.get(CartUrl);
    }
