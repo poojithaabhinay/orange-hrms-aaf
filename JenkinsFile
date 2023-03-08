@@ -1,7 +1,7 @@
 pipeline {
     agent any
     parameters{
-        choice(name: 'Enviroment',choices: [ 'QA', 'UAT'],description: 'Passing the Environment')
+        choice(name: 'Environment',choices: [ 'QA', 'UAT'],description: 'Passing the Environment')
         choice(name:'ExecutionType',choices:['Local','Remote'],description:'Passing the ExecutionType')
         choice(name :'Browser',choices:['CH','FF','ED'],description:'Passing the Browser')
         choice (name:'ThreadCount',choices:['1','2','3'],description:'Passing the ThreadCount')
