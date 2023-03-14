@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="orange-hrms-aaf" />
+        <module name="com-hotel-aaf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="orange-hrms-aaf" target="1.8" />
+      <module name="com-hotel-aaf" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

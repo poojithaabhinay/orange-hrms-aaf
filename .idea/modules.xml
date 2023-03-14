@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/orange-hrms-aaf.iml" filepath="$PROJECT_DIR$/.idea/orange-hrms-aaf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/com-hotel-aaf.iml" filepath="$PROJECT_DIR$/.idea/com-hotel-aaf.iml" />
     </modules>
   </component>
 </project>
