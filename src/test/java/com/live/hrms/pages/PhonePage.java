@@ -7,14 +7,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-
+import io.cucumber.java.Scenario;
 public class PhonePage extends Page {
     private WebDriver driver;
-    private  UiUtilities utilities;
-    public PhonePage(WebDriver driver) {
+    Scenario scenario;
+    public PhonePage(WebDriver driver, Scenario scenario) {
+        super(driver, scenario);
         this.driver = driver;
+        this.scenario = scenario;
         PageFactory.initElements(this.driver, this);
-        utilities =new UiUtilities(driver);
     }
 
     @FindBy(how = How.XPATH, using = ("(//a[text()='HTC Touch HD'])[1]"))
@@ -27,8 +28,8 @@ public class PhonePage extends Page {
     WebElement btnAddToCart;
 
     public void clickHTCTouchHD() {
-       utilities.waitForElement(htcTouch);
-        utilities.clickElementWithJs(htcTouch);
+       waitForElement(htcTouch);
+        clickElementWithJs(htcTouch);
     }
     public void clickIphone() {
         iphone.click();
@@ -37,6 +38,6 @@ public class PhonePage extends Page {
         palmTreo.click();
     }
     public void clickAddToCart(){
-        utilities.clickElementWithJs(btnAddToCart);
+        clickElementWithJs(btnAddToCart);
     }
 }

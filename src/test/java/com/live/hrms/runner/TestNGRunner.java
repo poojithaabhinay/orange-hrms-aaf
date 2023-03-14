@@ -10,7 +10,7 @@ import org.testng.annotations.DataProvider;
                 "html:target/cucumberReport",
                 "json:target/cucumberReport/cucumber.json",
         },
-        tags="@UI",
+        tags="@UI2",
        // strict = true,
         features = "src/test/java/com/live/hrms/features",
         glue={"com.live.hrms.stepDef"}

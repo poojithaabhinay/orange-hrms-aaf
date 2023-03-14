@@ -22,7 +22,7 @@ public  class LoggerClass {
         props.setProperty("log4j.appender.stdout","org.apache.log4j.ConsoleAppender");
         props.setProperty("log4j.appender.file.DatePattern","'.'yyyy-MM-dd");
         props.setProperty("log4j.appender.file.layout","org.apache.log4j.PatternLayout");
-        props.setProperty("log4j.appender.file.File",System.getProperty("user.dir") +"//target//" + str + "_" + tc + "_" + threadID + ".log");
+        props.setProperty("log4j.appender.file.File",System.getProperty("user.dir") +"//target//Logs//" + str + "_" + tc + "_" + threadID + ".log");
         props.setProperty("log4j.appender.file.layout.ConversionPattern","%p - %d{dd-MM-yyyy HH:mm:ss} - %C{1} - %M - %m%n");
         props.setProperty("log4j.appender.stdout.layout","org.apache.log4j.PatternLayout");
         props.setProperty("log4j.appender.stdout.layout.ConversionPattern","%5p %d{h:mm a}  %M - %m%n");

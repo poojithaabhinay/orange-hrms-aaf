@@ -1,6 +1,7 @@
 package com.live.hrms.pages;
 
 import com.live.hrms.utilities.UiUtilities;
+import io.cucumber.java.Scenario;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,22 +10,21 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class Page {
+public class Page extends UiUtilities{
 
-
+    Scenario scenario;
    private WebDriver driver;
-  private  UiUtilities utilities;
    public Page(){
    //    super(driver);
      System.out.println("Parameterless constructor");
    }
 
- public  Page(WebDriver driver)
+    public  Page(WebDriver driver, Scenario scenario)
     {
-
+        super(driver, scenario);
         this.driver = driver;
+        this.scenario = scenario;
         PageFactory.initElements(this.driver,this);
-        utilities =new UiUtilities(driver);
     }
     @FindBy(how= How.XPATH,using =("//ul[@class ='nav navbar-nav']/li[1]/a"))
     WebElement deskTop;
@@ -111,6 +111,6 @@ public class Page {
             login.click();
             }
             public String getTextFromItemsCart(){
-                return utilities.getElementText(itemCart);
+                return getElementText(itemCart);
             }
 }
